@@ -1,0 +1,383 @@
+.catalog-wrap {
+  position: relative;
+  height: 100px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 336px;
+  height: 360px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 99%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.catalog-heart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  stroke: rgba(20, 20, 20, 0.1);
+  fill: transparent;
+}
+
+.flip-card-front {
+  background-color: transparent;
+  color: black;
+}
+
+.flip-card-back {
+  background: #1e2827;
+  border-radius: 8px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Button animation */
+.catalog-modal-btn {
+  position: absolute;
+  display: block;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  /* line-height: 1.17; */
+  align-items: center;
+  color: var(--color-white);
+  top: 60px;
+  width: 108px;
+  height: 42px;
+  background: var(--color-dark-green);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+.catalog-modal-btn span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 1px;
+}
+
+.catalog-modal-btn:before,
+.catalog-modal-btn:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 0;
+  background: var(--color-dark-green);
+  transition: all 0.3s ease;
+}
+
+.catalog-modal-btn:before {
+  height: 0%;
+  width: 2px;
+}
+
+.catalog-modal-btn:after {
+  width: 0%;
+  height: 2px;
+}
+
+.catalog-modal-btn:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.catalog-modal-btn:hover:before {
+  height: 100%;
+}
+
+.catalog-modal-btn:hover:after {
+  width: 100%;
+}
+
+.catalog-modal-btn span:hover {
+  color: var(--color-dark-green);
+}
+
+.catalog-modal-btn span:before,
+.catalog-modal-btn span:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  background: var(--color-dark-green);
+  transition: all 0.3s ease;
+}
+
+.catalog-modal-btn span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.catalog-modal-btn span:after {
+  width: 0%;
+  height: 2px;
+}
+
+.catalog-modal-btn span:hover:before {
+  height: 100%;
+}
+
+.catalog-modal-btn span:hover:after {
+  width: 100%;
+}
+
+@media screen and (max-width: 374px) {
+  .flip-card {
+    max-width: 100%;
+  }
+  .catalog-list {
+    gap: 40px;
+  }
+
+  .catalog {
+    padding-top: 40px;
+    padding-bottom: 82px;
+  }
+
+  .catalog-title {
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    color: #1e2827;
+    margin-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  .catalog-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .catalog-item {
+    width: 100%;
+  }
+
+  .catalog-link {
+    display: block;
+  }
+
+  .catalog-watches {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .catalog-cover-text-title {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .catalog-cover-text-wrap {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    width: 236px;
+  }
+
+  .catalog-cover-text-wrap-second {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.5);
+    width: 162px;
+  }
+
+  .catalog-title-two {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    color: #141414;
+    margin-top: 14px;
+  }
+
+  .catalog-title-two-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.02em;
+    color: rgba(20, 20, 20, 0.5);
+    margin-top: 4px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .catalog {
+    padding-top: 40px;
+    padding-bottom: 130px;
+  }
+
+  .catalog-title {
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    color: #1e2827;
+    margin-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  .catalog-list {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .catalog-item {
+    width: 100%;
+  }
+
+  .catalog-link {
+    display: block;
+  }
+
+  .catalog-watches {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .catalog-cover-text-title {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .catalog-cover-text-wrap {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    width: 236px;
+  }
+
+  .catalog-cover-text-wrap-second {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.5);
+    width: 162px;
+  }
+
+  .catalog-title-two {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    color: #141414;
+    margin-top: 14px;
+  }
+
+  .catalog-title-two-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.02em;
+    color: rgba(20, 20, 20, 0.5);
+    margin-top: 4px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog {
+    padding-top: 64px;
+    padding-bottom: 128px;
+  }
+
+  .catalog-list {
+    gap: 40px 32px;
+    justify-content: space-between;
+  }
+
+  .catalog-item {
+    width: calc((100% - 92px) / 2);
+  }
+
+  .catalog-modal-btn {
+    width: 122px;
+    height: 50px;
+  }
+
+  .catalog-modal-btn span {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog-list {
+    gap: 64px 24px;
+    justify-content: center;
+  }
+
+  .catalog-item {
+    width: calc((100% - 72px) / 4);
+  }
+
+  .catalog-title {
+    padding-top: 20px;
+  }
+
+  .catalog-title-two {
+    margin-top: 39px;
+  }
+
+  .flip-card {
+    width: 275px;
+    height: 325px;
+  }
+
+  .flip-card-back {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .catalog {
+    padding-top: 80px;
+    padding-bottom: 128px;
+  }
+}
+
+@media screen and (max-width: 1157px) {
+  .catalog-dekstop {
+    display: none;
+  }
+}
