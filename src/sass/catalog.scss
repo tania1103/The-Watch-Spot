@@ -54,6 +54,7 @@
 
 .image-container img {
   width: 100%;
+  height: auto;
   display: block;
   align-items: center;
   justify-content: center;
@@ -196,10 +197,7 @@
     width: calc((100% - 32px) / 2);
   }
 
-  .image-container img {
-    width: 336px;
-    height: 360px;
-  }
+
 
   .overlay-description {
     padding: 40px;
@@ -234,8 +232,5 @@
     margin-bottom: 40px;
   }
 
-  .image-container img {
-    width: 276px;
-    height: 375px;
-  }
+
 }
